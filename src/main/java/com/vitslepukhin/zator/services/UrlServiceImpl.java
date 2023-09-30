@@ -27,7 +27,6 @@ public class UrlServiceImpl implements UrlService {
 
     @Override
     public Page<Url> getPaginated(int page, int size) {
-
         return urlRepository.findAll(PageRequest.of(page, size));
     }
 

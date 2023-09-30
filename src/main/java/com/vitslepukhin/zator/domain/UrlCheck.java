@@ -27,6 +27,7 @@ public class UrlCheck {
 
     String h1;
 
+    @Lob
     String description;
 
     @Fetch(FetchMode.SELECT)

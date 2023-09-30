@@ -30,6 +30,14 @@ public class UrlController {
             @RequestParam(name = "size", defaultValue = "5") int size,
             Model model
     ) {
+        if (page < 0) {
+            page = 0;
+        }
+
+        if (size < 0) {
+            size = 5;
+        }
+
         Page<Url> urlsPage = urlService.getPaginated(page, size);
         List<Url> urls = urlsPage.getContent();
         int currentPage = urlsPage.getNumber();
